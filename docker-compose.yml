@@ -1,4 +1,4 @@
-version: '3.3'
+version: '2'
 services:
   nginx-proxy:
     container_name: nginx-proxy
@@ -19,7 +19,7 @@ services:
     container_name: nginx-proxy-letsencrypt
     image: jrcs/letsencrypt-nginx-proxy-companion
     restart: always
-    volumes-from:
+    volumes_from:
       - nginx-proxy
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
