@@ -14,8 +14,6 @@ services:
             - certs:/etc/nginx/certs:ro
             - /var/run/docker.sock:/tmp/docker.sock:ro
             - ./.docker/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf
-            - ./.docker/network_internal.conf:/etc/nginx/conf.d/network_internal.conf
-
         restart: always
 
 volumes:
