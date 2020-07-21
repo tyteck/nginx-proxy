@@ -15,7 +15,11 @@ services:
             - /var/run/docker.sock:/tmp/docker.sock:ro
             - ./.docker/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf
         restart: always
-
+        logging:
+            driver: 'json-file'
+            options:
+                max-size: '50m'
+                max-file: '5'
 volumes:
     conf:
     vhost:
