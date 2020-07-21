@@ -12,5 +12,6 @@ services:
             - certs:/etc/nginx/certs
             - /var/run/docker.sock:/var/run/docker.sock:ro
         environment:
+            - DEFAULT_EMAIL=frederick@tyteca.net
             - NGINX_PROXY_CONTAINER=nginx-proxy
         restart: always
