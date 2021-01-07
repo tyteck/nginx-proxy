@@ -5,7 +5,9 @@ services:
         container_name: nginx-proxy
         ports:
             - '80:80'
+            - '8080:8080'
             - '443:443'
+            - '8443:8443'
         volumes:
             - conf:/etc/nginx/conf.d
             - vhost:/etc/nginx/vhost.d
