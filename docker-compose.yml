@@ -1,11 +1,11 @@
-version: '3'
+version: "3"
 services:
     nginx-proxy:
         image: jwilder/nginx-proxy:alpine
         container_name: nginx-proxy
         ports:
-            - '80:80'
-            - '443:443'
+            - "80:80"
+            - "443:443"
         volumes:
             - conf:/etc/nginx/conf.d
             - vhost:/etc/nginx/vhost.d
@@ -13,13 +13,14 @@ services:
             - dhparam:/etc/nginx/dhparam
             - certs:/etc/nginx/certs:ro
             - /var/run/docker.sock:/tmp/docker.sock:ro
+            - /etc/localtime:/etc/localtime:ro
             - ./.docker/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf
         restart: always
         logging:
-            driver: 'json-file'
+            driver: "json-file"
             options:
-                max-size: '10m'
-                max-file: '5'
+                max-size: "10m"
+                max-file: "5"
 volumes:
     conf:
     vhost:
