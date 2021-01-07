@@ -13,7 +13,6 @@ services:
             - dhparam:/etc/nginx/dhparam
             - certs:/etc/nginx/certs:ro
             - /var/run/docker.sock:/tmp/docker.sock:ro
-            - /etc/localtime:/etc/localtime:ro
             - ./.docker/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf
             - "/etc/localtime:/etc/localtime:ro"
             - "/etc/timezone:/etc/timezone:ro"
