@@ -25,11 +25,12 @@ services:
                 max-size: "10m"
                 max-file: "5"
 volumes:
-    conf:
-    vhost:
-    html:
-    dhparam:
-    certs:
+  conf:
+  vhost:
+  html:
+  dhparam:
+  certs:
+
 
 networks:
     nginx-proxy:
