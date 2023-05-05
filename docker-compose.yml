@@ -17,6 +17,8 @@ services:
             - "/etc/localtime:/etc/localtime:ro"
             - "/etc/timezone:/etc/timezone:ro"
         restart: always
+        networks:
+            - nginx-proxy
         logging:
             driver: "json-file"
             options:
@@ -30,6 +32,5 @@ volumes:
     certs:
 
 networks:
-    default:
-        external:
-            name: nginx-proxy
+    nginx-proxy:
+        external: true
